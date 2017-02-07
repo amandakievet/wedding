@@ -1,0 +1,16 @@
+.main {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0d1020+0,213062+29,213062+29,1e5087+55,4a779f+100 */
+  background: #0d1020; /* Old browsers */
+  background: -moz-linear-gradient(top, #0d1020 0%, #213062 29%, #213062 29%, #1e5087 55%, #4a779f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0d1020 0%,#213062 29%,#213062 29%,#1e5087 55%,#4a779f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #0d1020 0%,#213062 29%,#213062 29%,#1e5087 55%,#4a779f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1020', endColorstr='#4a779f',GradientType=0 ); /* IE6-9 */
+}
+
+
+img {
+  width: 100%;
+}
