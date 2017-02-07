@@ -8,9 +8,18 @@
   background: -webkit-linear-gradient(top, #0d1020 0%,#213062 29%,#213062 29%,#1e5087 55%,#4a779f 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #0d1020 0%,#213062 29%,#213062 29%,#1e5087 55%,#4a779f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1020', endColorstr='#4a779f',GradientType=0 ); /* IE6-9 */
+
+  font-family: "Surveyor SSm A", "Surveyor SSm B", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 
 img {
   width: 100%;
+}
+
+.copy {
+  text-align: center;
 }
