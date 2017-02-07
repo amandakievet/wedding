@@ -68,3 +68,9 @@ p {
     width: 1.5em;
     margin-bottom: .75em;
 }
+
+@media (max-width: 400px) {
+  .copy h1 {
+    font-size: 1em;
+  }
+}
