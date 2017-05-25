@@ -1,0 +1,108 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Amanda &amp; Cody</title>
+  <meta name="description" content="The website of the wedding of Amanda Kievet &amp; Cody Williams. September 9, 2017 in Spring Green, WI">
+  <meta name="author" content="Amanda Kievet &amp; Cody Williams" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico" type='image/x-icon' />
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6686556/6801572/css/fonts.css" />
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon'/ >
+</head>
+<body>
+  <div class="sky">
+    <div class="stars">
+      <div class="main">
+
+        <div class="container">
+          <div class="row">
+
+            <div class="logo-container six columns offset-by-three">
+              <img src="images/logo.png" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two copy">
+              <h3>Save the Date</h3>
+              <p class="breaker" />
+              <h1>We’re getting married at<br/>Cates Family Farm<br/>5992 County Road T<br/>Spring Green, Wisconsin 53588<br/>on September 9, 2017<br/>at 5:00pm</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two copy">
+              <h3>Accommodation</h3>
+              <p class="breaker" />
+              <p>We have reserved a limited block of rooms at</p>
+              <p><a href="http://www.thehouseontherock.com/HOTR_Lodging_Inn.htm" target="_blank">House on the Rock Inn</a>
+              <br/>3591 WI-23<br/>Dodgeville, WI 53533<br/>(608) 935-3711</p>
+              <p>To make a reservation, call and ask for the Kievet/Williams wedding block. All rooms in our block are standard double queen, though other types of rooms may be available outside the block. Make sure you're reserving at the House on the Rock <strong>Inn</strong>, not the Resort.</p>
+              <p>Unfortunately, there is no parking at the wedding venue but good news, shuttles will be provided! Shuttles stop at House on the Rock Inn and <a href="http://www.tradersbarandgrill.biz/">Traders Bar &amp; Grill</a>. Anyone who will not be staying in the area after the wedding or staying elsewhere can drive to Traders and catch the shuttle. If you do not wish to drive at all the night of the wedding, we highly recommend making reservations at the House on the Rock Inn as soon as possible, before rooms are full.</p>
+              <p>Further shuttle details will be provided.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two copy">
+              <h3>Etc</h3>
+              <p class="breaker" />
+              <p>Dress: Semiformal<br/>The ceremony will be held on grass, so high heels are not recommended</p>
+              <p>We're very excited to have live music by <a href="https://www.gypsyswing.com/" target="_blank">Caravan Gypsy Swing Ensemble</a><br />Bring your dancing shoes</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two copy">
+              <h3>Details and formal invitations to follow</h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two copy">
+              <form id="auth-form" class="hidden">
+                <h3>Prove You're Invited</h3>
+                <input type="text" name="name" placeholder="Enter the code on your invitation" /><br />
+                <input type="submit" />
+              </form>
+
+              <form id="rsvp-form" class="hidden">
+                <h3>RSVP</h3>
+                <input type="text" name="name" placeholder="Enter your name" /><br />
+                <input type="checkbox" name="rsvp" value="plusone" />I will be attending and bringing a plus one<br />
+                <input type="checkbox" name="rsvp" value="yes" />I will be attending by myself<br />
+                <input type="checkbox" name="rsvp" value="no" />Sadly, I'm unable to attend<br />
+                <input type="submit" />
+              </form>
+
+              <span id="rsvp-message" class="hidden"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCkkYQ6KBJALx4VdAWNqv4_R_VEvLNsjNc",
+    authDomain: "amandacody-8850d.firebaseapp.com",
+    databaseURL: "https://amandacody-8850d.firebaseio.com",
+    projectId: "amandacody-8850d",
+    storageBucket: "amandacody-8850d.appspot.com",
+    messagingSenderId: "305202253256"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="scripts/rsvp.js"></script>
+</body>
+</html>

@@ -45,6 +45,14 @@ p {
   margin: 0 0 10px 0;
 }
 
+input {
+  color: #323232;
+}
+
+.hidden {
+  display: none;
+}
+
 .copy {
   margin-top: 100px;
   font-style: italic;
