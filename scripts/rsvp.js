@@ -34,9 +34,15 @@ function sendRsvp(event) {
   event.preventDefault();
   var data = serializeArray(rsvpForm);
   var name = data[0].value;
-  var rsvp = data[1].value;
 
-  firebase.database().ref('invitee/' + name).set({ rsvp: rsvp }).then(function() {
+  var payload = {
+    name: name,
+    rsvp: data[1].value,
+    partysize: data[2].value,
+    comment: data[3].value
+  }
+
+  firebase.database().ref('invitee/' + name).set(payload).then(function() {
     rsvpForm.classList.add('hidden');
     rsvpMessage.innerText = "Thank you for RSVP'ing!";
     rsvpMessage.classList.remove('hidden');
