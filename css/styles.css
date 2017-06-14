@@ -97,6 +97,10 @@ label {
   margin-bottom: 10px;
 }
 
+input {
+  color: #323232;
+}
+
 input[type="text"],
 input[type="password"] {
   padding: 24px 14px;
