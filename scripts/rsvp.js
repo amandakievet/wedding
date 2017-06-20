@@ -1,8 +1,28 @@
 var rsvpForm = document.getElementById('rsvp-form');
 var rsvpMessage = document.getElementById('rsvp-message');
 var authForm = document.getElementById('auth-form');
+var rsvpRadios = document.getElementsByClassName('rsvp-question');
+var yesQuestions = document.getElementsByClassName('rsvp-yes-form')[0];
+var errorMsg = document.getElementById('rsvp-error-message');
+var authMsg = document.getElementById('auth-form-errors');
+
 rsvpForm.addEventListener('submit', sendRsvp);
 authForm.addEventListener('submit', accessRsvp);
+
+var rsvpPrevi = null;
+for (var i = 0; i < rsvpRadios.length; i++) {
+  rsvpRadios[i].addEventListener('click', function() {
+    if (this !== rsvpPrevi) {
+      rsvpPrevi = this;
+      if (this.value === 'yes') {
+        yesQuestions.style.display = 'block';
+      } else if (this.value === 'no') {
+        yesQuestions.style.display = 'none';
+      }
+    }
+  });
+}
+
 
 firebase.auth().signOut().then(function() {
   authForm.classList.remove('hidden');
@@ -13,64 +33,68 @@ firebase.auth().signOut().then(function() {
 
 function accessRsvp(event) {
   event.preventDefault();
-  var data = serializeArray(authForm);
-  var password = data[0].value;
+  var password = authForm.password.value;
   var email = 'weddingguest@amandacody.us';
   firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
     authForm.classList.add('hidden');
     rsvpForm.classList.remove('hidden');
   }).catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
     rsvpMessage.classList.remove('hidden');
-    rsvpMessage.innerText = "You have entered an incorrect password. Please try again";
+    showError(authMsg, "You have entered an incorrect password. Please try again")
     setTimeout(function() {
-      rsvpMessage.classList.add('hidden');
+      removeErrors(authMsg);
     }, 3000);
   });
 }
 
+function showError(wrapper, msg) {
+  wrapper.classList.remove('hidden');
+  wrapper.innerText = msg;
+}
+
+function removeErrors(wrapper) {
+  wrapper.classList.add('hidden');
+}
+
 function sendRsvp(event) {
   event.preventDefault();
-  var data = serializeArray(rsvpForm);
-  var name = data[0].value;
+  removeErrors(errorMsg);
 
+  var name = rsvpForm.name.value;
+  var rsvp = rsvpForm.rsvp.value;
+
+  if (name === "") {
+    showError(errorMsg, "Please enter your name");
+    return;
+  }
+
+  if (rsvp === "") {
+    showError(errorMsg, "Please enter your RSVP response");
+    return;
+  }
+
+  var comment = rsvpForm.comment.value;
   var payload = {
     name: name,
-    rsvp: data[1].value,
-    partysize: data[2].value,
-    food: data[3].value,
-    comment: data[4].value
+    rsvp: rsvp,
+    comment: comment
+  };
+
+  if (rsvp === 'yes') {
+    var shuttleValue = rsvpForm.shuttle.value;
+    if (shuttleValue === "") {
+      showError(errorMsg, "Please answer shuttle question");
+      return;
+    }
+    payload.shuttle = shuttleValue;
+    payload.partysize = rsvpForm.partysize.value;
+    payload.food = rsvpForm.food.value;
   }
 
   firebase.database().ref('invitee/' + name).set(payload).then(function() {
     rsvpForm.classList.add('hidden');
-    rsvpMessage.innerText = "Thank you for RSVP'ing!";
-    rsvpMessage.classList.remove('hidden');
+    showError(rsvpMessage, "Thank you for RSVP'ing!");
   }).catch(function(error) {
-    rsvpMessage.innerText = "Something went wrong here, please try again.";
-    rsvpMessage.classList.remove('hidden');
+    showError(authMsg, "Something went wrong here, please try again.");
   });
-}
-
-function serializeArray(form) {
-    var field, l, s = [];
-    if (typeof form == 'object' && form.nodeName == "FORM") {
-        var len = form.elements.length;
-        for (i=0; i<len; i++) {
-            field = form.elements[i];
-            if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
-                if (field.type == 'select-multiple') {
-                    l = form.elements[i].options.length;
-                    for (j=0; j<l; j++) {
-                        if(field.options[j].selected)
-                            s[s.length] = { name: field.name, value: field.options[j].value };
-                    }
-                } else if ((field.type != 'checkbox' && field.type != 'radio') || field.checked) {
-                    s[s.length] = { name: field.name, value: field.value };
-                }
-            }
-        }
-    }
-    return s;
 }

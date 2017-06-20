@@ -49,7 +49,20 @@ input {
 }
 
 .hidden {
-  display: none;
+  display: none!important;
+}
+
+.error-msg,
+.success-msg {
+  font-size: 19px;
+  font-style: italic;
+  padding: 10px 16px;
+  border-radius: 2px;
+}
+
+.error-msg {
+  color: #fb0000;
+  background-color: #fdb1b1;
 }
 
 .copy {
@@ -99,6 +112,7 @@ label {
 
 input {
   color: #323232;
+  margin-bottom: 0;
 }
 
 input[type="text"],
@@ -144,6 +158,15 @@ textarea {
 
 .form-group {
   margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.radio-set {
+  margin-bottom: 15px;
+}
+
+.rsvp-yes-form {
+  display: none;
 }
 
 form h2 {

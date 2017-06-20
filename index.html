@@ -46,6 +46,7 @@
               <p><a href="http://www.thehouseontherock.com/HOTR_Lodging_Inn.htm" target="_blank">House on the Rock Inn</a>
               <br/>3591 WI-23<br/>Dodgeville, WI 53533<br/>(608) 935-3711</p>
               <p class="details">To make a reservation, call and ask for the Kievet/Williams wedding block. All rooms in our block are standard double queen, though other types of rooms may be available outside the block. Make sure you're reserving at the House on the Rock <strong>Inn</strong>, not the Resort.</p>
+              <a name="shuttle-info"></a>
               <p class="details">Unfortunately, there is no parking at the wedding venue but good news, shuttles will be provided! Shuttles stop at <a href="https://www.thehouseontherock.com/HOTR_Lodging_Inn.htm" target="_blank">House on the Rock Inn</a> and <a href="http://www.tradersbarandgrill.biz/">Traders Bar &amp; Grill</a>. Anyone who will not be staying in the area after the wedding or staying elsewhere can drive to Traders and catch the shuttle. If you do not wish to drive at all the night of the wedding, we highly recommend making reservations at the House on the Rock Inn as soon as possible, before rooms are full.</p>
               <p class="details">Further shuttle details will be provided.</p>
             </div>
@@ -64,13 +65,17 @@
             <div class="eight columns offset-by-two copy">
               <form id="auth-form" class="hidden">
                 <h2>RSVP</h2>
-                <label>Enter the password on your invitation rsvp card</label>
-                <input type="text" name="password" class="password-input" /><br />
+                <span id="auth-form-errors" class="hidden error-msg"></span>
+                <div class="form-group">
+                  <label>Enter the password on your invitation rsvp card</label>
+                  <input type="text" name="password" class="password-input" /><br />
+                </div>
                 <input type="submit" />
               </form>
 
               <form id="rsvp-form" class="hidden">
                 <h2>RSVP</h2>
+                <span id="rsvp-error-message" class="hidden error-msg"></span>
                 <div class="form-group">
                   <label>Name</label></label>
                   <input type="text" name="name"/><br />
@@ -79,27 +84,43 @@
                 <div class="form-group">
                   <label>Will you be attending?</label>
                   <div class="rsvp-options">
-                    <input type="radio" name="rsvp" value="yes" /><span class="details">Yes!</span><br />
-                    <input type="radio" name="rsvp" value="no" /><span class="details">No, sadly I can't attend</span<br />
+                    <input type="radio" name="rsvp" value="yes" class="rsvp-question"/><span class="details">Yes!</span><br />
+                    <input type="radio" name="rsvp" value="no" class="rsvp-question"/><span class="details">No, sadly I can't attend</span<br />
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label>If you answered yes, how many will be with you?*</label>
-                  <select name="partysize">
-                    <option value="1">Just Me</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                  </select>
-                </div>
+                <div class="rsvp-yes-form">
 
-                <div class="form-group">
-                  <label>Do you have any dietary restrictions?</label>
-                  <textarea name="food"></textarea>
+                  <div class="form-group">
+                    <label>How many will be with you? <small>(including children)*</small></label>
+                    <select name="partysize">
+                      <option value="1">Just Me</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>How are you getting to the venue? <small>(<a href="#shuttle-info">see here</a>)</small></label>
+                    <div class="rsvp-options">
+                      <div class="radio-set">
+                        <input type="radio" name="shuttle" value="hotr" /><span class="details">I'm staying at the House on the Rock Inn and catching the shuttle from there</span><br />
+                      </div>
+                      <div class="radio-set">
+                        <input type="radio" name="shuttle" value="traders" /><span class="details">I'm driving to Traders Bar and Grill and catching the shuttle from there</span><br />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Do you have any dietary restrictions?</label>
+                    <input type="text" name="food" />
+                  </div>
+
                 </div>
 
                 <div class="form-group">
@@ -114,7 +135,7 @@
               </form>
 
 
-              <span id="rsvp-message" class="hidden"></span>
+              <span id="rsvp-message" class="hidden success-msg"></span>
             </div>
           </div>
 
