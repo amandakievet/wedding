@@ -39,7 +39,8 @@ function sendRsvp(event) {
     name: name,
     rsvp: data[1].value,
     partysize: data[2].value,
-    comment: data[3].value
+    food: data[3].value,
+    comment: data[4].value
   }
 
   firebase.database().ref('invitee/' + name).set(payload).then(function() {
