@@ -116,7 +116,8 @@ input[type="submit"] {
   font-size: 24px;
 }
 
-input[type=checkbox] {
+input[type=checkbox],
+input[type=radio] {
   transform: scale(1.5);
   height: 19px;
   margin-right: 12px;
