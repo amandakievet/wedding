@@ -33,8 +33,22 @@
             <div class="eight columns offset-by-two copy">
               <h3>You're Invited</h3>
               <p class="breaker" />
-              <h1>We’re getting married at<br/>Cates Family Farm<br/>5992 County Road T<br/>Spring Green, Wisconsin 53588<br/>on September 9, 2017<br/>at 4:00pm</h1>
-              <small>Scroll down for RSVP</small>
+              <h1>We’re getting married at<br/>Cates Family Farm<br/>5992 County Road T<br/>Spring Green, Wisconsin 53588<br/>on September 9, 2017<br/>at 4:45pm</h1>
+              <br />
+              <p>
+                Cates is a small grass-fed beef operation in the Wyoming Township, located just 3 miles down the road from Taliesin and 6 miles from Spring Green. They have a beautiful two level barn built in the 1890’s. It’s rustic but definitely endearing.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two copy">
+              <h3>Shuttles</h3>
+              <p class="breaker" />
+              <p class="details">Unfortunately, there is no parking at the wedding venue but good news, shuttles will be provided! Shuttles stop at <a href="https://www.thehouseontherock.com/HOTR_Lodging_Inn.htm" target="_blank">House on the Rock Inn</a> and <a href="http://www.tradersbarandgrill.biz/">Traders Bar &amp; Grill</a>.
+              </p>
+              <p class="details">Shuttles from Traders to the Venue:<br />3:45<br />3:55<br />4:20</p>
+              <p class="details">Shuttles from House on the Rock Inn to Venue:<br />3:25<br />4:15</p>
             </div>
           </div>
 
@@ -46,9 +60,6 @@
               <p><a href="http://www.thehouseontherock.com/HOTR_Lodging_Inn.htm" target="_blank">House on the Rock Inn</a>
               <br/>3591 WI-23<br/>Dodgeville, WI 53533<br/>(608) 935-3711</p>
               <p class="details">To make a reservation, call and ask for the Kievet/Williams wedding block. All rooms in our block are standard double queen, though other types of rooms may be available outside the block. Make sure you're reserving at the House on the Rock <strong>Inn</strong>, not the Resort.</p>
-              <a name="shuttle-info"></a>
-              <p class="details">Unfortunately, there is no parking at the wedding venue but good news, shuttles will be provided! Shuttles stop at <a href="https://www.thehouseontherock.com/HOTR_Lodging_Inn.htm" target="_blank">House on the Rock Inn</a> and <a href="http://www.tradersbarandgrill.biz/">Traders Bar &amp; Grill</a>. Anyone who will not be staying in the area after the wedding or staying elsewhere can drive to Traders and catch the shuttle. If you do not wish to drive at all the night of the wedding, we highly recommend making reservations at the House on the Rock Inn as soon as possible, before rooms are full.</p>
-              <p class="details">Further shuttle details will be provided.</p>
             </div>
           </div>
 
@@ -74,102 +85,9 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="eight columns offset-by-two copy">
-              <form id="auth-form" class="hidden">
-                <h2>RSVP</h2>
-                <span id="auth-form-errors" class="hidden error-msg"></span>
-                <div class="form-group">
-                  <label>Enter the password on your invitation rsvp card</label>
-                  <input type="text" name="password" class="password-input" /><br />
-                </div>
-                <input type="submit" />
-              </form>
-
-              <form id="rsvp-form" class="hidden">
-                <h2>RSVP</h2>
-                <span id="rsvp-error-message" class="hidden error-msg"></span>
-                <div class="form-group">
-                  <label>Name</label></label>
-                  <input type="text" name="name"/><br />
-                </div>
-
-                <div class="form-group">
-                  <label>Will you be attending?</label>
-                  <div class="rsvp-options">
-                    <input type="radio" name="rsvp" value="yes" class="rsvp-question"/><span class="details">Yes!</span><br />
-                    <input type="radio" name="rsvp" value="no" class="rsvp-question"/><span class="details">No, sadly I can't attend</span<br />
-                  </div>
-                </div>
-
-                <div class="rsvp-yes-form">
-
-                  <div class="form-group">
-                    <label>How many will be with you? <small>(including children)*</small></label>
-                    <select name="partysize">
-                      <option value="1">Just Me</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>How are you getting to the venue? <small>(<a href="#shuttle-info">see here</a>)</small></label>
-                    <div class="rsvp-options">
-                      <div class="radio-set">
-                        <input type="radio" name="shuttle" value="hotr" /><span class="details">I have already made a reservation** at the House on the Rock Inn and catching the shuttle from there</span><br />
-                      </div>
-                      <div class="radio-set">
-                        <input type="radio" name="shuttle" value="traders" /><span class="details">I'm driving to Traders Bar and Grill and catching the shuttle from there</span><br />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Do you have any dietary restrictions?</label>
-                    <input type="text" name="food" />
-                  </div>
-
-                </div>
-
-                <div class="form-group">
-                  <label>Anything else you'd like to tell us?</label>
-                  <textarea name="comment"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <input type="submit" /><br />
-                </div>
-                <small>*Guests are invited to bring their family (children included), or a plus one</small><br>
-                <small>**Rooms at the House on the Rock Inn are limited, so only choose this if you have a secured reservation.</small>
-              </form>
-
-
-              <span id="rsvp-message" class="hidden success-msg"></span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </div>
-  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCkkYQ6KBJALx4VdAWNqv4_R_VEvLNsjNc",
-    authDomain: "amandacody-8850d.firebaseapp.com",
-    databaseURL: "https://amandacody-8850d.firebaseio.com",
-    projectId: "amandacody-8850d",
-    storageBucket: "amandacody-8850d.appspot.com",
-    messagingSenderId: "305202253256"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="scripts/rsvp.js"></script>
 </body>
 </html>
